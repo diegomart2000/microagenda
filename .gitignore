@@ -11,6 +11,6 @@ pids
 logs
 results
 
-mobile\hooks
-mobile\plugins
-mobile\platforms
+mobile/hooks/
+mobile/plugins/
+mobile/platforms/
