@@ -11,5 +11,6 @@ pids
 logs
 results
 
-mobile\platforms\android\ant-build
-mobile\platforms\android\ant-gen
+mobile\hooks
+mobile\plugins
+mobile\platforms
