@@ -17,99 +17,70 @@
  * under the License.
  */
 * {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */ -moz-box-sizing: border-box;/* Firefox, other Gecko */ box-sizing: border-box;/* Opera/IE 8+ */
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    padding: 0px; margin: 0px; border-spacing: 0;
 }
+
+html {overflow-y: scroll; overflow-x: hidden; height: 100%;}
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    /*background-color: #f9f9f9;*/
+    font-family: 'Roboto', sans-serif;
     height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
     width:100%;
-}
-
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
     margin:0px;
-    overflow:visible;
     padding:0px;
-    text-align:center;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
+header {height: 64px; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999; box-shadow: 0 2px 4px rgba(0, 0, 0, .26);}
+#app {margin-top: 64px; position: relative;}
 
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
+/* Font sizes */
+body {font-size: 20px;}
+h1 {font-size: 1.5em;}
+h2 {font-size: 1.25em;}
+h3 {font-size: 1em;}
+button {font-size: 1em; text-transform: uppercase;}
+.hint {font-size: 0.85em;}
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
+/* Font weight */
+h1 {font-weight: 300;}
+h2 {font-weight: 400;}
+h3 {font-weight: 400;}
+button {font-weight: 500;}
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
+/* Spacing */
+h1 {padding: 16px 0;}
+h2 {padding: 16px 0;}
+h3 {padding-bottom: 4px;}
+
+/* Palette definition */
+body {color: rgba(0,0,0,.87);}
+.base {color: rgba(0,0,0,.87);}
+.secondary {color: rgba(0,0,0,.54);}
+.hint {color: rgba(0,0,0,.26);}
+hr {background-color: rgba(0,0,0,.12);}
+
+.border-color {border-color: rgba(0,0,0,.12);}
+
+.primary-background {background-color: #3f51b5; color: #FFF;}
+
+/* Layout */
+
+hr {border: none; height: 1px; margin: 1.5em 0;}
+
+/* Layout control classes */
+.padded-all {padding: 16px;}
+.padded-hr {padding-left: 16px; padding-right: 16px;}
+.padded-vr {padding-top: 16px; padding-bottom: 16px;}
+
+.margin-hr {margin-right: 16px;}
+.margin-vr {margin-top: 16px;}
+
+/* Components */
+ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
+ul li {padding: 16px 0; border-top-width: 1px; border-top-style: solid;}

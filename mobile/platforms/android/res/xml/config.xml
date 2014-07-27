@@ -5,13 +5,17 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
     <name>Microagenda</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Los datos de contacto de tus amigos siempre actualizados!
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="diego.martinez@cvgram.me" href="http://cordova.io">
+        Diego Martinez
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="Orientation" value="portrait" />
 </widget>
