@@ -25,7 +25,6 @@ define(function() {
 			
 			//Name container
 			self.spinner = $('.spinner');
-			self.spinner.load('img/spinner.svg');
 		}
 
 

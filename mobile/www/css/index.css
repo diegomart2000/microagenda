@@ -163,8 +163,6 @@ ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow
     -webkit-transform-origin: 56px 56px;
     -moz-transform-origin: 56px 56px;
     transform-origin: 56px 56px;
-
-    fill: #37BFA9;
 }
 
 @-webkit-keyframes spin {
@@ -179,5 +177,3 @@ ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow
 
 /* Data types clasess */
 .photo {width: 3.2em; border-width: 2px; border-style: solid; border-radius: 4px;}
-
-#contact-fallback-pick {stroke: #FF0000;}
