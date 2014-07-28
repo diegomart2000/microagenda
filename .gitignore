@@ -15,3 +15,5 @@ mobile/.cordova/
 mobile/hooks/
 mobile/plugins/
 mobile/platforms/
+mobile/wwww/debugdata.json
+mobile/wwww/phonegap-desktop.js
