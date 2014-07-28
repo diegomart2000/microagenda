@@ -11,28 +11,28 @@
 
 
     <body class="base-font-color">
-        <header class="padded-all primary-background">
+        <header class="padding-all primary-background">
             Microagenda
         </header>
 
         <div id="app">
-            <section id="home-page" class="padded-all">
-                <h1>Página de inicio</h1>
+            <section id="home-page" class="padding-all">
+                <h1>Contactos</h1>
                 <div class="spinner"></div>
                 <ul class="margin-vr">
-                    <li class="border-color">
-                        <h3>Diego Martinez</h3>
-                        <div class="secondary">+54 9 11 5055 1731</div>
-                    </li>
-                    <li class="border-color">
-                        <h3>Joel Martinez</h3>
-                        <div class="secondary">+54 9 11 5055 1731</div>
-                    </li>
-                    <li class="border-color">
-                        <h3>Nahuel Martinez</h3>
-                        <div class="secondary">+54 9 11 5055 1731</div>
-                    </li>
                 </ul>
+
+                 <script type="text/x-handlebars-template" id="contact-item-template">
+                    {{#each contacts}}
+                    <li class="border-color">
+                        <img src="img/contact-fallback-pick.svg" class="left photo gray-border-color margin-hr">
+                        <div class="left padding-vr">
+                            <h3>{{displayName}}</h3>
+                            <a class="secondary" href="{{contactLink}}">{{phoneNumber}}</a>
+                        </div>
+                    </li>
+                    {{/each}}
+                 </script>
             </section>
         </div>
 

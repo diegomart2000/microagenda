@@ -66,21 +66,30 @@ body {color: rgba(0,0,0,.87);}
 hr {background-color: rgba(0,0,0,.12);}
 
 .border-color {border-color: rgba(0,0,0,.12);}
+.gray-border-color {border-color: rgba(0,0,0,.54);}
 
-.primary-background {background-color: #3f51b5; color: #FFF;}
+.primary-background {background-color: #3F51B5; color: #FFF;}
 
 /* Layout */
-
 hr {border: none; height: 1px; margin: 1.5em 0;}
+a {text-decoration: none;}
 
 /* Layout control classes */
-.padded-all {padding: 16px;}
-.padded-hr {padding-left: 16px; padding-right: 16px;}
-.padded-vr {padding-top: 16px; padding-bottom: 16px;}
+.padding-all {padding: 16px;}
+.padding-hr {padding-left: 8px; padding-right: 8px;}
+.padding-vr {padding-top: 8x; padding-bottom: 8px;}
 
-.margin-hr {margin-right: 16px;}
-.margin-vr {margin-top: 16px;}
+.margin-hr {margin-right: 8px;}
+.margin-vr {margin-top: 8px;}
+
+.left {float:left;}
+.right {float:right;}
 
 /* Components */
 ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
-ul li {padding: 16px 0; border-top-width: 1px; border-top-style: solid;}
+ul li {padding: 16px 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
+
+.spinner {width: 65px; height: 65px; background-image: url('../img/spinner.gif'); background-position: center; background-repeat: no-repeat; margin: auto;}
+
+/* Data types clasess */
+.photo {width: 64px; border-width: 2px; border-style: solid; border-radius: 4px;}
