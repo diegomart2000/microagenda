@@ -26,7 +26,7 @@
     <preference name="android-installLocation" value="auto" />
 
     <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.contacts" version="0.2.9" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.geolocation" />

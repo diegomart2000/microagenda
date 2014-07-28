@@ -27,7 +27,8 @@ define(function() {
 				var fields = ['*'];
 
 				navigator.contacts.find(
-					fields, 
+					fields,
+					
 					//onSuccess
 					function(contacts){
 						deferred.resolve(contacts);
@@ -36,7 +37,7 @@ define(function() {
 					function(err){
 						deferred.reject(err);
 					},
-
+					
 					options);
 
 				return deferred.promise;
