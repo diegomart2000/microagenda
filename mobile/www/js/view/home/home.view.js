@@ -47,8 +47,6 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 			var ul = self.container.find('ul').empty();
 
 			if(contacts){
-				contacts = _.sortBy(contacts, 'displayName');
-
 			    var mappedContacts = _.map(contacts, function(contact){
 			    	//Get the contact display name
 			    	var displayName = contact.displayName ? contact.displayName : contact.name.formatted;
@@ -85,7 +83,9 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 
 			    	return {displayName: displayName, phoneNumber: phoneNumber, contactLink: contactLink};
 			    });
-			    
+
+				mappedContacts = _.sortBy(mappedContacts, 'displayName');
+
 			    new ContactView(ul).render({contacts: mappedContacts});
 			}
 		},

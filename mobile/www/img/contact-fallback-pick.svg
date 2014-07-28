@@ -11,7 +11,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="64"
    height="64"
-   id="cotanct-fallback-pick"
+   id="contact-fallback-pick"
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="contact-fallback-pick.svg">
@@ -33,7 +33,7 @@
      transform="translate(0,-988.3622)">
     <path
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#7C7878;stroke-width:2;stroke-miterlimit:4;stroke-opacity:0.54;stroke-dasharray:none"
+       style="fill:none;stroke: #7C7878; stroke-opacity: 0.54; stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 32,1005.3622 c -4.498175,0 -8.144653,3.6161 -8.144653,8.0769 0,4.4608 3.646478,8.077 8.144653,8.077 4.498175,0 8.144653,-3.6162 8.144653,-8.077 0,-4.4608 -3.646478,-8.0769 -8.144653,-8.0769 z m 0,16.1539 c -4.498175,0 -12.79874,3.6161 -12.79874,8.0769 l 0,5.7692 25.59748,0 0,-5.7692 c 0,-4.4608 -8.300565,-8.0769 -12.79874,-8.0769 z"
        id="path3158" />
   </g>

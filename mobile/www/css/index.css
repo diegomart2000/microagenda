@@ -85,6 +85,9 @@ h2 {padding: .4em 0;}
 h3 {padding-bottom: .2em;}
 
 /* Palette definition */
+/* color: #7C7878 */
+/* accent 1: #37BFA9*/
+/* accent 2: #C03048*/
 body {color: rgba(124,120,120,.87);}
 .base {color: rgba(124,120,120,.87);}
 .secondary {color: rgba(124,120,120,.54);}
@@ -115,7 +118,66 @@ a {text-decoration: none;}
 ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
 ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
 
-.spinner {width: 100px; height: 100px; background-image: url('../img/spinner.gif'); background-position: center; background-repeat: no-repeat; margin: 40% auto;}
+
+
+.spinner {width: 112px; height: 112px;  margin: 40% auto;}
+.spinner svg #rolling {
+    /*-webkit-animation-name: spin;
+    -webkit-animation-duration: 600ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    -webkit-transform-origin: 56px 56px;
+    -moz-transform-origin: 56px 56px;
+    transform-origin: 56px 56px;*/
+}
+
+.spinner svg #rolling #rail {
+    stroke: #7C7878;
+    stroke-opacity: 0.12;
+}
+
+.spinner svg #rolling #roller {
+    stroke: #7C7878;
+    stroke-opacity: 0.87;
+}
+
+.spinner svg #microagenda {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function:  ease-in-out;
+    -webkit-animation-direction: reverse;
+
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function:  ease-in-out;
+    animation-direction: reverse;
+
+    -webkit-transform-origin: 56px 56px;
+    -moz-transform-origin: 56px 56px;
+    transform-origin: 56px 56px;
+
+    fill: #37BFA9;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
 
 /* Data types clasess */
 .photo {width: 3.2em; border-width: 2px; border-style: solid; border-radius: 4px;}
+
+#contact-fallback-pick {stroke: #FF0000;}
