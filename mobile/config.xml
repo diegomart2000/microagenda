@@ -11,5 +11,7 @@
     <access origin="*" />
 
 
-    <preference name="Orientation" value="portrait" />
+    <preference name="orientation" value="portrait" />
+	
+	<gap:plugin name="org.apache.cordova.contacts" version="0.2.11" />
 </widget>
