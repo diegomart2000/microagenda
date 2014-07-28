@@ -24,7 +24,7 @@ define(function() {
 				
 				var options = new ContactFindOptions();
 				options.multiple = true;
-				var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+				var fields = ['*'];
 
 				navigator.contacts.find(
 					fields, 
@@ -34,7 +34,7 @@ define(function() {
 					}, 
 					//onError
 					function(err){
-						alert('onError!');
+						deferred.reject(err);
 					},
 
 					options);

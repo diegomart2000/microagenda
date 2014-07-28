@@ -9,7 +9,7 @@
     </author>
 
     <preference name="phonegap-version" value="3.5.0" />
-    <preference name="orientation" value="default" />
+    <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
@@ -36,5 +36,5 @@
     <gap:plugin name="org.apache.cordova.vibration" />
 
     <icon src="icon.png" />
-     <access origin="*" />
+    <access origin="*" />
 </widget>

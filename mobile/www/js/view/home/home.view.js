@@ -102,7 +102,7 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 				},
 
 				function(err){
-					console.error('error while loading contacts', err);
+					alert('error while loading contacts ' + err.code);
 				}
 			);
 		}	
