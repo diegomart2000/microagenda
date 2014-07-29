@@ -35,6 +35,15 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 			});
 
 			self.doLoadContactList();
+
+			facebookConnectPlugin.login(
+				function(res){
+					alert(res);
+				}, 
+
+				function(err){
+					alert(err);
+				});
 		},
 
 		/**
@@ -48,40 +57,55 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 
 			if(contacts){
 			    var mappedContacts = _.map(contacts, function(contact){
-			    	//Get the contact display name
-			    	var displayName = contact.displayName ? contact.displayName : contact.name.formatted;
+			    	var mapped = {};
 
+			    	//Get the contact display name
+			    	mapped.displayName = contact.displayName ? contact.displayName : contact.name.formatted;
+			    	mapped.icon = 'mail';
+
+			    	//Phone number handling
 			    	var phoneNumbers = contact.phoneNumbers;
-			    	var phoneNumber = null;
+			    	mapped.phoneNumber = null;
 			    	_.each(phoneNumbers, function(phone){
-			    		if(!phoneNumber || phone.pref) phoneNumber = phone.value;
+			    		if(!mapped.phoneNumber || phone.pref) mapped.phoneNumber = phone.value;
 			    	});
 
+					//Email number handling
 					var emails = contact.emails;
-			    	var email = null;
+			    	mapped.email = null;
 			    	_.each(emails, function(emailField){
-			    		if(!email || emailField.pref) email = emailField.value;
+			    		if(!mapped.email || emailField.pref) mapped.email = emailField.value;
 			    	});
 			    	
-			    	if(!displayName && !phoneNumber){
-			    		displayName = email ? email : 'Sin nombre';
-			    		phoneNumber = ' ';
+			    	if(!mapped.displayName && !mapped.phoneNumber){
+			    		mapped.displayName = mapped.email ? mapped.email : 'Sin nombre';
+			    		mapped.phoneNumber = ' ';
 			    	}
 
-			    	var contactLink = '';
+			    	mapped.contactLink = '';
 
-					if(!displayName){
-			    		displayName = email ? email : 'Sin nombre';
+					if(!mapped.displayName){
+			    		mapped.displayName = mapped.email ? mapped.email : 'Sin nombre';
 			    	}
 
-			    	if(!phoneNumber){
-			    		phoneNumber = email ? email : '';
-			    		contactLink = 'mailto:' + email;
+			    	if(!mapped.phoneNumber){
+			    		mapped.phoneNumber = mapped.email ? mapped.email : '';
+			    		mapped.contactLink = 'mailto:' + mapped.email;
 			    	}else{
-			    		contactLink = 'tel:' + phoneNumber;
+			    		mapped.contactLink = 'tel:' + mapped.phoneNumber;
+			    		mapped.icon = 'phone';
 			    	}
 
-			    	return {displayName: displayName, phoneNumber: phoneNumber, contactLink: contactLink};
+			    	//Profile Picture handling
+					var photos = contact.photos;
+			    	mapped.photo = {};
+			    	_.each(photos, function(photo){
+			    		if(!mapped.photo || photo.pref){
+			    			mapped.photo = photo;	
+			    		} 
+			    	});
+
+			    	return mapped;
 			    });
 
 				mappedContacts = _.sortBy(mappedContacts, 'displayName');

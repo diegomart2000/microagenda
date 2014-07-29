@@ -19,6 +19,12 @@ define(function() {
 		this.render = function(item){
 			this.item = item;
 			this.el = $(this.template(item));
+			this.el.find('.icon-button').on('tap', function(){
+				var el = $(this).addClass('blink');
+				navigator.notification.vibrate(30);
+				window.open(el.attr('src'), '_system');
+			});
+
 			this.container.append(this.el);
 
 			this.container.trigger('contact-item-render-done');

@@ -11,12 +11,12 @@
 
 
     <body class="base-font-color">
-        <header class="padding-all primary-background">
+        <header class="padding-container-all primary-background">
             Microagenda
         </header>
 
         <div id="app">
-            <section id="home-page" class="padding-all">
+            <section id="home-page" class="padding-container-all">
                 <h1>Contactos</h1>
                 <div class="spinner"><img src="img/spinner.svg"></div>
                 <ul class="margin-vr">
@@ -25,24 +25,35 @@
                  <script type="text/x-handlebars-template" id="contact-item-template">
                     {{#each contacts}}
                     <li class="border-color">
-                        <img src="img/contact-fallback-pick.svg" class="left photo gray-border-color margin-hr">
+                        <img src="img/contact.svg" class="left photo gray-border-color margin-hr">
                         <div class="left padding-vr">
                             <h3>{{displayName}}</h3>
-                            <a class="secondary" href="{{contactLink}}">{{phoneNumber}}</a>
+                            <a class="secondary" href="{{contactLink}}">{{phoneNumber}} - {{photo.value}}</a>
+                        </div>
+                        <div class="right padding-vr">
+                            <a class="icon-button padding-all margin-hr" src="{{contactLink}}"><img src="img/{{icon}}.svg" class="phone"></a>
                         </div>
                     </li>
                     {{/each}}
                  </script>
             </section>
+
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/lib/facebookConnectPlugin.js"></script>
         <script type="text/javascript" src="js/lib/jquery.js"></script>
+        <script type='text/javascript' src='js/lib/jquery.mobile.js'></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
         <script type="text/javascript" src="js/lib/q.js"></script>
         <script type="text/javascript" src="js/lib/handlebars.js"></script>
+        
         <script type="text/javascript" src="js/microagenda.js"></script>
+
+
         <script type="text/javascript">
             $(function() {
+                //FastClick.attach(document.body);
+
                 Microagenda.initialize();
             });
         </script>

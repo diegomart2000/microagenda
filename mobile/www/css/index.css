@@ -104,7 +104,8 @@ hr {border: none; height: 1px; margin: 1.5em 0;}
 a {text-decoration: none;}
 
 /* Layout control classes */
-.padding-all {padding: .8em;}
+.padding-container-all {padding: .8em;}
+.padding-all {padding: .4em;}
 .padding-hr {padding-left: .4em; padding-right: .4em;}
 .padding-vr {padding-top: .4em; padding-bottom: .4em;}
 
@@ -118,9 +119,10 @@ a {text-decoration: none;}
 ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
 ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
 
+.icon-button {display: block; height: 2.4em; width: 2.4em; border-radius: 1.2em;}
+.icon-button.blink {-webkit-animation: blink 200ms linear 1 normal forwards running; animation: blink 200ms  forwards linear;}
 
-
-.spinner {width: 112px; height: 112px;  margin: 40% auto;}
+.spinner {width:6.4em; height: 6.4em;  margin: 40% auto;}
 .spinner svg #rolling {
     /*-webkit-animation-name: spin;
     -webkit-animation-duration: 600ms;
@@ -136,7 +138,6 @@ ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow
     -moz-transform-origin: 56px 56px;
     transform-origin: 56px 56px;*/
 }
-
 .spinner svg #rolling #rail {
     stroke: #7C7878;
     stroke-opacity: 0.12;
@@ -175,5 +176,18 @@ ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow
     to {transform:rotate(360deg);}
 }
 
+/* Chrome, Safari, Opera */
+@-webkit-keyframes blink {
+    from {background: rgba(55,191,169,.12); -webkit-transform: rotate(36deg); }
+    to {background: transparent; -webkit-transform: rotate(0deg); }
+}
+
+/* Standard syntax */
+@keyframes blink {
+    from {background: transparent; transform: rotate(0deg); }
+    to {background: rgba(55,191,169,.12); transform: rotate(36deg); }
+}
+
 /* Data types clasess */
-.photo {width: 3.2em; border-width: 2px; border-style: solid; border-radius: 4px;}
+.photo {width: 3.2em; border-width: 2px; border-style: solid; border-radius: 1.6em;}
+.phone {width: 1.6em;}
