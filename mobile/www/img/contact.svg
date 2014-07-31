@@ -14,8 +14,37 @@
    id="contact-fallback-pick"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="contact-fallback-pick.svg">
-  <defs id="defs4" />
+   sodipodi:docname="contact.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview3007"
+     showgrid="true"
+     inkscape:zoom="1"
+     inkscape:cx="15.978999"
+     inkscape:cy="44.323847"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="contact-fallback-pick">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3009"
+       empspacing="4"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -24,7 +53,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,4 +66,14 @@
        d="m 32,1005.3622 c -4.498175,0 -8.144653,3.6161 -8.144653,8.0769 0,4.4608 3.646478,8.077 8.144653,8.077 4.498175,0 8.144653,-3.6162 8.144653,-8.077 0,-4.4608 -3.646478,-8.0769 -8.144653,-8.0769 z m 0,16.1539 c -4.498175,0 -12.79874,3.6161 -12.79874,8.0769 l 0,5.7692 25.59748,0 0,-5.7692 c 0,-4.4608 -8.300565,-8.0769 -12.79874,-8.0769 z"
        id="path3158" />
   </g>
+  <path
+     sodipodi:type="arc"
+     style="fill:none;stroke:#7c7878;stroke-width:0.29032262;stroke-miterlimit:4;stroke-opacity:0.54117647000000002;stroke-dasharray:0.87096785,0.87096785;stroke-dashoffset:0"
+     id="path3011"
+     sodipodi:cx="5.5"
+     sodipodi:cy="5.5"
+     sodipodi:rx="4.5"
+     sodipodi:ry="4.5"
+     d="m 10,5.5 a 4.5,4.5 0 1 1 -9,0 4.5,4.5 0 1 1 9,0 z"
+     transform="matrix(6.8888889,0,0,6.8888889,-5.8888889,-5.8888891)" />
 </svg>

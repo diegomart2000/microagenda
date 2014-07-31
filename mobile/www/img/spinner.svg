@@ -87,7 +87,7 @@
   </g>
   <path
      id="microagenda"
-     style="stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;fill:#37BFA9;"
+     style="stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;fill:#03a9f4;"
      d="m 56,41 c -4.498175,0 -8.15625,3.6017 -8.15625,8.0625 0,4.4608 3.658075,8.09375 8.15625,8.09375 4.498175,0 8.15625,-3.63295 8.15625,-8.09375 C 64.15625,44.6017 60.498175,41 56,41 z m 0,16.15625 c -4.498175,0 -12.8125,3.6017 -12.8125,8.0625 l 0,5.78125 25.625,0 0,-5.78125 c 0,-4.4608 -8.314325,-8.0625 -12.8125,-8.0625 z">
       <animateTransform attributeName="transform" 
         attributeType="XML"

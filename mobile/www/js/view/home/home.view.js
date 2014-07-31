@@ -35,16 +35,8 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 			});
 
 			self.doLoadContactList();
-
-			facebookConnectPlugin.login(
-				function(res){
-					alert(res);
-				}, 
-
-				function(err){
-					alert(err);
-				});
 		},
+
 
 		/**
 		 * To render the contact list
@@ -110,7 +102,13 @@ define(['../entity/contact.view', '../../model/local.contact.model'], function(C
 
 				mappedContacts = _.sortBy(mappedContacts, 'displayName');
 
-			    new ContactView(ul).render({contacts: mappedContacts});
+				var indexedContacts = _.groupBy(mappedContacts, function(contact){
+					var idx = contact.displayName.substring(0, 1).toUpperCase();
+					idx = isNaN(idx) ? idx : '#';
+					return idx;
+				});
+
+			    new ContactView(ul).render({contacts: indexedContacts});
 			}
 		},
 

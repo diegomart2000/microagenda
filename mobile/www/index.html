@@ -11,8 +11,10 @@
 
 
     <body class="base-font-color">
-        <header class="padding-container-all primary-background">
-            Microagenda
+        <header class="padding-all primary-border">
+            <div class="app-logo-container padding-hr left">
+                <img src="img/logo.svg">
+            </div>
         </header>
 
         <div id="app">
@@ -24,23 +26,28 @@
 
                  <script type="text/x-handlebars-template" id="contact-item-template">
                     {{#each contacts}}
-                    <li class="border-color">
-                        <img src="img/contact.svg" class="left photo gray-border-color margin-hr">
-                        <div class="left padding-vr">
-                            <h3>{{displayName}}</h3>
-                            <a class="secondary" href="{{contactLink}}">{{phoneNumber}} - {{photo.value}}</a>
-                        </div>
-                        <div class="right padding-vr">
-                            <a class="icon-button padding-all margin-hr" src="{{contactLink}}"><img src="img/{{icon}}.svg" class="phone"></a>
-                        </div>
-                    </li>
+                        <li class="index divider-primary-border">
+                            <h2 class="primary-font">{{@key}}</h2>
+                        </li>
+
+                        {{#each this}}
+                        <li class="divider-border">
+                            <img src="img/contact.svg" class="left photo margin-hr">
+                            <div class="left padding-vr">
+                                <h3>{{displayName}}</h3>
+                                <a class="secondary" href="{{contactLink}}">{{phoneNumber}}</a>
+                            </div>
+                            <div class="right padding-vr">
+                                <a class="icon-button padding-all margin-hr" src="{{contactLink}}"><img src="img/{{icon}}.svg" class="phone"></a>
+                            </div>
+                        </li>
+                        {{/each}}
                     {{/each}}
                  </script>
             </section>
 
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/lib/facebookConnectPlugin.js"></script>
         <script type="text/javascript" src="js/lib/jquery.js"></script>
         <script type='text/javascript' src='js/lib/jquery.mobile.js'></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
@@ -50,12 +57,6 @@
         <script type="text/javascript" src="js/microagenda.js"></script>
 
 
-        <script type="text/javascript">
-            $(function() {
-                //FastClick.attach(document.body);
-
-                Microagenda.initialize();
-            });
-        </script>
+        <script type="text/javascript">$(function() {Microagenda.initialize();});</script>
     </body>
 </html>

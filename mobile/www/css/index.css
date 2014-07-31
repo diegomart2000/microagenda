@@ -61,7 +61,9 @@ body {
     padding:0px;
 }
 
-header {height: 3.2em; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999; text-transform: uppercase; text-align: center;}
+header {height: 3.4em; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999; text-transform: uppercase; text-align: center; border-bottom-width: 0.2em; border-bottom-style: solid;}
+header .app-logo-container img {height: 2.4em;}
+
 #app {margin-top: 3.2em; position: relative;}
 
 /* Font sizes */
@@ -79,7 +81,7 @@ h3 {font-weight: 400;}
 button {font-weight: 500;}
 
 /* Spacing */
-header {line-height: 1.6em;}
+header {line-height: 2.4em;}
 h1 {padding: .4em 0;}
 h2 {padding: .4em 0;}
 h3 {padding-bottom: .2em;}
@@ -94,10 +96,17 @@ body {color: rgba(124,120,120,.87);}
 .hint {color: rgba(124,120,120,.26);}
 hr {background-color: rgba(124,120,120,.12);}
 
-.border-color {border-color: rgba(124,120,120,.12);}
-.gray-border-color {border-color: rgba(124,120,120,.54);}
+.primary-font {color: rgba(3, 169, 244, .87);}
 
-.primary-background {background-color: #306090; color: #FFFFFF;}
+.divider-border {border-color: rgba(124,120,120,.12);}
+.gray-border {border-color: rgba(124,120,120,.54);}
+.primary-border {border-color: #03a9f4;}
+.divider-primary-border {border-color: rgba(3, 169, 244, .54);}
+
+header {background-color: #FFF;}
+.primary-background {background-color: #03a9f4; color: #FFFFFF;}
+.acent-background {background-color: #8bc34a; color: #FFFFFF;}
+
 
 /* Layout */
 hr {border: none; height: 1px; margin: 1.5em 0;}
@@ -118,6 +127,7 @@ a {text-decoration: none;}
 /* Components */
 ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
 ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
+ul li:last-child {border-top: none;}
 
 .icon-button {display: block; height: 2.4em; width: 2.4em; border-radius: 1.2em;}
 .icon-button.blink {-webkit-animation: blink 200ms linear 1 normal forwards running; animation: blink 200ms  forwards linear;}
@@ -189,5 +199,7 @@ ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow
 }
 
 /* Data types clasess */
-.photo {width: 3.2em; border-width: 2px; border-style: solid; border-radius: 1.6em;}
+.index {border-bottom-width: 2px; border-bottom-style: solid; border-top: none;}
+
+.photo {width: 3.2em; border-radius: 1.6em;}
 .phone {width: 1.6em;}

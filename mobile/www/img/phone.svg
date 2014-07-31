@@ -12,46 +12,14 @@
    width="32"
    height="32"
    id="svg2"
-   version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="-140"
-     inkscape:cy="16"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     showborder="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2985"
-       empspacing="4"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true" />
-  </sodipodi:namedview>
+   version="1.1">
   <metadata
      id="metadata7">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -62,7 +30,7 @@
      id="layer1"
      transform="translate(0,-1020.3622)">
     <path
-       style="fill:none;stroke:#37bfa9;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0.20000000000000001"
+       style="fill:#8bc34a;stroke:#8bc34a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0.20000000000000001"
        d="m 21.132512,1029.7231 c 0.880873,1.0306 -0.994919,4.4257 -4.1897,7.5831 -3.194781,3.1574 -7.2812279,5.2033 -7.3796259,3.8508 L 8,1039.3622 l -6.0000003,3 0.6702348,7.208 c 0.2914457,3.1344 10.9100585,-0.8785 18.3297655,-8.208 7.419707,-7.3295 10.585154,-15.942 8.539372,-18.3344 m -8.40686,6.6953 L 19,1028.3622 l 3,-6 7.539372,0.6656"
        id="path2987-1"
        inkscape:connector-curvature="0"
