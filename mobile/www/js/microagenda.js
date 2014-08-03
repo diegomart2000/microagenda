@@ -24,6 +24,8 @@ var Microagenda = {
         //initialize the parse API
         Parse.initialize(Microagenda.Config.Parse.AppId, Microagenda.Config.Parse.JSKey);
 
+        alert(FB);
+
         //Load main component controller
         Microagenda.load('microagenda.main');
     },
@@ -78,7 +80,7 @@ Microagenda.SectionView = {
     //Allows this view to be shown, all section views are exclusive
     show: function(){
 
-    },
+    }
 
-    
+
 };
