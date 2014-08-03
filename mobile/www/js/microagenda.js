@@ -20,7 +20,12 @@ var Microagenda = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'Microagenda.receivedEvent(...);'
     onDeviceReady: function() {
-       Microagenda.load('microagenda.main');
+
+        //initialize the parse API
+        Parse.initialize(Microagenda.Config.Parse.AppId, Microagenda.Config.Parse.JSKey);
+
+        //Load main component controller
+        Microagenda.load('microagenda.main');
     },
 
     /**
@@ -38,4 +43,42 @@ var Microagenda = {
         $(js).attr('data-main', 'js/' + (app ? app + '/' : '') + baseComponent);
         fjs.parentNode.insertBefore(js, fjs);
     }
+};
+
+
+/**
+ * Application config
+ */
+Microagenda.Config = {
+
+    //Facebook config
+    Facebook: {
+        AppId: '604043223046726',
+        AppSecret: 'fd04611ef11f208e16f57982eb124657'
+    },
+
+    //Parse config
+    Parse: {
+        AppId: '',
+        JSKey: ''
+    }
+};
+
+
+/**
+ * Application Section View
+ */
+Microagenda.SectionView = {
+
+    //Extend method to create a new section view
+    extend: function(view){
+
+    },
+
+    //Allows this view to be shown, all section views are exclusive
+    show: function(){
+
+    },
+
+    
 };

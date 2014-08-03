@@ -64,7 +64,7 @@ body {
 header {height: 3.4em; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999; text-transform: uppercase; text-align: center; border-bottom-width: 0.2em; border-bottom-style: solid;}
 header .app-logo-container img {height: 2.4em;}
 
-#app {margin-top: 3.2em; position: relative;}
+#app section {margin-top: 3.4em; position: relative;}
 
 /* Font sizes */
 body {font-size: 20px;}
@@ -96,7 +96,7 @@ body {color: rgba(124,120,120,.87);}
 .hint {color: rgba(124,120,120,.26);}
 hr {background-color: rgba(124,120,120,.12);}
 
-.primary-font {color: rgba(3, 169, 244, .87);}
+.primary-font {color: #03a9f4 /*rgba(3, 169, 244, .87)*/;}
 
 .divider-border {border-color: rgba(124,120,120,.12);}
 .gray-border {border-color: rgba(124,120,120,.54);}
@@ -118,63 +118,30 @@ a {text-decoration: none;}
 .padding-hr {padding-left: .4em; padding-right: .4em;}
 .padding-vr {padding-top: .4em; padding-bottom: .4em;}
 
+.first-inpage {margin-top: 2em;}
 .margin-hr {margin-right: .4em;}
 .margin-vr {margin-top: .4em;}
+.margin-auto {margin-left: auto; margin-right: auto;}
 
 .left {float:left;}
 .right {float:right;}
+
+.hidden {display: none;}
 
 /* Components */
 ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
 ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
 ul li:last-child {border-top: none;}
 
+button {height: 3.2em; padding: 0 0.8em; display: block; border: 0; box-shadow: 0 1px .4em rgba(0, 0, 0, .12); border-radius: .1em;}
+
+a {text-decoration: none;}
+a.link-button {height: 3.2em; line-height: 3.2em; padding: 0 0.8em; display: block; text-transform: uppercase;}
+
 .icon-button {display: block; height: 2.4em; width: 2.4em; border-radius: 1.2em;}
 .icon-button.blink {-webkit-animation: blink 200ms linear 1 normal forwards running; animation: blink 200ms  forwards linear;}
 
 .spinner {width:6.4em; height: 6.4em;  margin: 40% auto;}
-.spinner svg #rolling {
-    /*-webkit-animation-name: spin;
-    -webkit-animation-duration: 600ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-
-    animation-name: spin;
-    animation-duration: 600ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-
-    -webkit-transform-origin: 56px 56px;
-    -moz-transform-origin: 56px 56px;
-    transform-origin: 56px 56px;*/
-}
-.spinner svg #rolling #rail {
-    stroke: #7C7878;
-    stroke-opacity: 0.12;
-}
-
-.spinner svg #rolling #roller {
-    stroke: #7C7878;
-    stroke-opacity: 0.87;
-}
-
-.spinner svg #microagenda {
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 1000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function:  ease-in-out;
-    -webkit-animation-direction: reverse;
-
-    animation-name: spin;
-    animation-duration: 1000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function:  ease-in-out;
-    animation-direction: reverse;
-
-    -webkit-transform-origin: 56px 56px;
-    -moz-transform-origin: 56px 56px;
-    transform-origin: 56px 56px;
-}
 
 @-webkit-keyframes spin {
     from { -webkit-transform: rotate(0deg); }
@@ -198,8 +165,45 @@ ul li:last-child {border-top: none;}
     to {background: rgba(55,191,169,.12); transform: rotate(36deg); }
 }
 
+
+
+.swipe-left {-webkit-animation: swipe-left 300ms ease-in 1 normal forwards running; animation: swipe-left 300ms forwards ease-in;}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes swipe-left {
+    from {left: 0;}
+    to {left: -100%;}
+}
+
+/* Standard syntax */
+@keyframes blink swipe-left{
+    from {left: 0;}
+    to {left: -100%;}
+}
+
 /* Data types clasess */
 .index {border-bottom-width: 2px; border-bottom-style: solid; border-top: none;}
 
 .photo {width: 3.2em; border-radius: 1.6em;}
 .phone {width: 1.6em;}
+
+
+
+
+/*
+ *
+ * Pages Styles
+ *
+ */
+
+
+/* Landing */
+#landing {height: 100%;  /*background-color: #f1f3f4;*/ }
+#landing .main-page {width: 100%; padding: 3em; /*background-color: #f1f3f4;*/ position: absolute; top: 0; left: 0;}
+#landing .main-page h1 {font-size: 2.7em; text-align: center; text-transform: lowercase;}
+#landing .main-page .logo {width: 18em; display: block; margin-top: 2.5em;}
+#landing .main-page hr {margin: 4em auto; width: 18em;}
+#landing .main-page p {text-align: center; font-size: 1.2em; font-weight: 300;}
+#landing .main-page button {width: 18em; margin-top: 3.2em; /*border-width: 2px; border-style: solid; background-color: transparent;*/}
+
+#landing .main-page a {margin: 1.2em auto; text-align: center; font-size: 1em;}

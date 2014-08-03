@@ -11,13 +11,29 @@
 
 
     <body class="base-font-color">
-        <header class="padding-all primary-border">
-            <div class="app-logo-container padding-hr left">
-                <img src="img/logo.svg">
-            </div>
-        </header>
+        <div id="landing">
+            <section class="main-page">
 
-        <div id="app">
+                <img src="img/logo-full.svg" class="margin-auto logo">
+                <hr>
+                <p>
+                    Los datos de las personas que más te importan, siempre a mano!
+                </p>
+
+                <button class="primary-background margin-auto" ontap="$('.main-page').addClass('swipe-left')">Registrate ahora!</button>
+
+                <a class="link-button">Iniciar sesión</a>
+            </section>
+        </div>
+
+        <div id="app" class="hidden">
+
+            <header class="padding-all primary-border">
+                <div class="app-logo-container padding-hr left">
+                    <img src="img/logo.svg">
+                </div>
+            </header>
+        
             <section id="home-page" class="padding-container-all">
                 <h1>Contactos</h1>
                 <div class="spinner"><img src="img/spinner.svg"></div>
@@ -47,15 +63,16 @@
             </section>
 
         </div>
+
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/lib/jquery.js"></script>
         <script type='text/javascript' src='js/lib/jquery.mobile.js'></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
         <script type="text/javascript" src="js/lib/q.js"></script>
         <script type="text/javascript" src="js/lib/handlebars.js"></script>
-        
-        <script type="text/javascript" src="js/microagenda.js"></script>
+        <script type="text/javascript" src="js/lib/parse.js"></script>
 
+        <script type="text/javascript" src="js/microagenda.js"></script>
 
         <script type="text/javascript">$(function() {Microagenda.initialize();});</script>
     </body>
