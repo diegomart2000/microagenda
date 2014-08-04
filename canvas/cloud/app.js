@@ -7,6 +7,16 @@ app.set('views', 'cloud/views');  // Specify the folder to find templates
 app.set('view engine', 'jade');    // Set the template engine
 app.use(express.bodyParser());    // Middleware for reading request body
 
+
+app.get('/facebook/canvas', function(req, res) {
+  res.render('hello');
+});
+
+app.post('/facebook/canvas', function(req, res) {
+  res.render('hello');
+});
+
+
 // This is an example of hooking up a request handler with a specific request
 // path and HTTP verb using the Express routing API.
 app.get('/hello', function(req, res) {
