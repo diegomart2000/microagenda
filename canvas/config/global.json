@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Microagenda": {
+            "applicationId": "Xcwogp6kDa2keNGo9tQKveguWHtpdoue1iqilyA8", 
+            "masterKey": "WNGl4gVlcqowen3AgUo0b7NPvcNLPOxkVu5AdmUv"
+        }, 
+        "_default": {
+            "link": "Microagenda"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.19"
+    }
+}

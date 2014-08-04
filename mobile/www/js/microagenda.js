@@ -24,7 +24,12 @@ var Microagenda = {
         //initialize the parse API
         Parse.initialize(Microagenda.Config.Parse.AppId, Microagenda.Config.Parse.JSKey);
 
-        alert(FB);
+        facebookConnectPlugin.login(["email,user_friends"], function(res){
+            facebookConnectPlugin.api('/me/friends?fields=id,name,picture.type(large)', ['public_profile'], function(response) {
+              alert(JSON.stringify(response));
+            });
+
+        }, function(err){alert('error ' + err)});
 
         //Load main component controller
         Microagenda.load('microagenda.main');
@@ -61,8 +66,8 @@ Microagenda.Config = {
 
     //Parse config
     Parse: {
-        AppId: '',
-        JSKey: ''
+        AppId: 'Xcwogp6kDa2keNGo9tQKveguWHtpdoue1iqilyA8',
+        JSKey: 'X8vne9X50L8mQPkExJsu6pxKguImTy4aQsEu5lW8'
     }
 };
 
