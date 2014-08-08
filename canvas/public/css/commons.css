@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(http://themes.googleusercontent.com/static/fonts/roboto/v11/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */ -moz-box-sizing: border-box;/* Firefox, other Gecko */ box-sizing: border-box;/* Opera/IE 8+ */
+    padding: 0px; margin: 0px; border-spacing: 0;
+}
+
+html {overflow-y: scroll; overflow-x: hidden; height: 100%;}
+
+body {font-family: 'Roboto', sans-serif; height:100%; width:100%; margin:0px; padding:0px;}
+body, input, select, option, textarea, label, h1, h2, h3, h4, p, a, button {font-family: 'Roboto', Arial; font-weight:400; margin: 0;}
+
+header {height: 3.4em; width: 100%; position: fixed; top: 0; left: 0; z-index: 9999; text-transform: uppercase; text-align: center; border-bottom-width: 0.2em; border-bottom-style: solid;}
+header .app-logo-container img {height: 2.4em;}
+
+section {width: 32.4em; margin: 50px auto; top: 0; padding: 1.2em; background-color: #FFF; /*border-bottom: 2px solid #cfd8dc;*/ box-shadow: 0 0.1em 0 #b0bec5; border-radius: 0.2em; position: relative;}
+
+/* Font sizes */
+body {font-size: 14px;}
+h1 {font-size: 2em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.2em;}
+button {font-size: 0.85em; text-transform: uppercase;}
+.hint {font-size: 0.85em;}
+
+/* Font weight */
+body {}
+h1 {font-weight: 300;}
+h2 {font-weight: 400;}
+h3 {font-weight: 400;}
+button {font-weight: 400;}
+
+/* Spacing */
+header {line-height: 2.4em;}
+h1 {padding: 0 0 .4em 0;}
+h2 {padding: .4em 0;}
+h3 {padding-bottom: .2em;}
+
+/* Palette definition */
+/* color: #7C7878 */
+/* accent 1: #37BFA9*/
+/* accent 2: #C03048*/
+body {color: rgba(69,90,100,.87);}
+.base {color: rgba(69,90,100,.87);}
+.secondary {color: rgba(69,90,100,.54);}
+.hint {color: rgba(69,90,100,.26);}
+hr {background-color: rgba(69,90,100,.12);}
+
+.primary-font {color: #03a9f4 /*rgba(3, 169, 244, .87)*/;}
+
+.divider-border {border-color: rgba(69,90,100,.12);}
+.gray-border {border-color: rgba(69,90,100,.54);}
+.primary-border {border-color: #03a9f4;}
+.divider-primary-border {border-color: rgba(3, 169, 244, .54);}
+
+body {background-color: #e0e0e0;}
+header {background-color: #FFF;}
+.primary-background {background-color: #03a9f4; color: #FFFFFF;}
+.acent-background {background-color: #8bc34a; color: #FFFFFF;}
+
+
+/* Layout */
+hr {border: none; height: 1px; margin: 1.5em 0;}
+a {text-decoration: none;}
+
+/* Layout control classes */
+.padding-container-all {padding: .8em;}
+.padding-all {padding: .4em;}
+.padding-hr {padding-left: .4em; padding-right: .4em;}
+.padding-vr {padding-top: .4em; padding-bottom: .4em;}
+
+.first-inpage {margin-top: 2em;}
+.margin-hr {margin-right: .4em;}
+.margin-vr {margin-top: .4em;}
+.margin-auto {margin-left: auto; margin-right: auto;}
+
+.left {float:left;}
+.right {float:right;}
+.clear {clear: both;}
+.clearfix {overflow: hidden;}
+
+.hidden {display: none;}
+
+.text-center {text-align: center;}
+
+/* Components */
+ul {list-style: none; padding: 0; margin-left: 0; margin-right: 0;}
+ul li {padding: .8em 0; border-top-width: 1px; border-top-style: solid; overflow: hidden;}
+ul li:last-child {border-top: none;}
+
+input:ACTIVE, 
+select:ACTIVE,
+textarea:ACTIVE, 
+input:focus, 
+select:focus, 
+button:focus,
+textarea:focus 
+  {outline: none;}
+
+button {height: 3em; padding: 0 1em; display: block; border: none; border-radius: .2em;}
+
+a {text-decoration: none;}
+a.link-button {height: 3.2em; line-height: 3.2em; padding: 0 0.8em; display: block; text-transform: uppercase;}
+
+.icon-button {display: block; height: 2.4em; width: 2.4em; border-radius: 1.2em;}
+.icon-button.blink {-webkit-animation: blink 200ms linear 1 normal forwards running; animation: blink 200ms  forwards linear;}
+
+.spinner {width:6.4em; height: 6.4em;  margin: 40% auto;}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes blink {
+    from {background: rgba(55,191,169,.12); -webkit-transform: rotate(36deg); }
+    to {background: transparent; -webkit-transform: rotate(0deg); }
+}
+
+/* Standard syntax */
+@keyframes blink {
+    from {background: transparent; transform: rotate(0deg); }
+    to {background: rgba(55,191,169,.12); transform: rotate(36deg); }
+}
+
+
+
+.swipe-left {-webkit-animation: swipe-left 800ms cubic-bezier(.89, .40, .19, 1) 1 normal forwards; animation: swipe-left 300ms cubic-bezier(.89, .40, .19, 1) 1 normal forwards;}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes swipe-left {
+    from {left: 0;}
+    to {left: -100%; display: none;}
+}
+
+/* Standard syntax */
+@keyframes swipe-left{
+    from {left: 0;}
+    to {left: -100%; display: none;}
+}
+
+
+.swipe-top {-webkit-animation: swipe-top 800ms cubic-bezier(.89, .40, .19, 1) 1 normal forwards; animation: swipe-top 300ms cubic-bezier(.89, .40, .19, 1) 1 normal forwards;}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes swipe-top {
+    from {top: -100%;}
+    to {top: 0;}
+}
+
+/* Standard syntax */
+@keyframes swipe-top{
+    from {top: -100%;}
+    to {top: 0;}
+}
+
+/* Data types clasess */
+.index {border-bottom-width: 2px; border-bottom-style: solid; border-top: none;}
+
+.photo {width: 3.2em; border-radius: 1.6em;}
+.phone {width: 1.6em;}
+
+
+
+
+/*
+ *
+ * Pages Styles
+ *
+ */
+
+
+/* Landing */
+#landing {height: 100%;  /*background-color: #f1f3f4;*/ }
+#landing .main-page {width: 100%; padding: 3em; /*background-color: #f1f3f4;*/ position: absolute; top: 0; left: 0;}
+#landing .main-page h1 {font-size: 2.7em; text-align: center; text-transform: lowercase;}
+#landing .main-page .logo {width: 18em; display: block; margin-top: 2.5em;}
+#landing .main-page hr {margin: 4em auto; width: 18em;}
+#landing .main-page p {text-align: center; font-size: 1.2em; font-weight: 300;}
+#landing .main-page button {width: 18em; margin-top: 3.2em; /*border-width: 2px; border-style: solid; background-color: transparent;*/}
+
+#landing .main-page a {margin: 1.2em auto; text-align: center; font-size: 1em;}
+
+.hero {width: 10em;}
