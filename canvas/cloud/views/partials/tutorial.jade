@@ -1,0 +1,66 @@
+div
+	section#welcome.hidden
+		.text-center
+			h1 Bienvenido a Microagenda
+			.first-inpage
+				| La forma más fácil y rápida de tener los datos de las personas qué más te importan, siempre al alcance de tu mano!
+			
+			.hero-container.first-inpage
+				img.hero(src='/img/icon.svg')
+
+			hr
+			.secondary 
+				| Ahora primero lo primero. Tenemos varias cosas que configurar. Pero no te preocupes, es muy simple!
+			.first-inpage
+				button.primary-background.rounded-all.right(action='continue') Comenzar
+				.clear
+
+	section#signup.hidden
+		.text-center
+			h1 Crea tu usuario
+			.ui-form.margin-vr
+				fieldset
+					label.caption Email
+					input(type='text', placeholder='ej: alguien@ejemplo.com', required='true', requiredError="Debes indicar la direcci\u00f3n de mail", validator='email', validatorError='El mail no es correcto', validateOnBlur='true', name='email', tabindex='1').gray-border.rounded-all.padding-hr.base
+				fieldset
+					label.caption Contraseña
+					input(type='password', placeholder='establece una cotraseña', required='true', requiredError="Debes establecer una contraseña", validateOnBlur='true', name='password', tabindex='2').gray-border.rounded-all.padding-hr.base
+				fieldset
+					label.caption Contraseña otra vez
+					input(type='password', placeholder='repite la contraseña por seguridad', required='true', requiredError="Debes repetir la contraseña ingresada", validateOnBlur='true', name='again', tabindex='3').gray-border.rounded-all.padding-hr.base
+
+				.first-inpage
+					button.primary-background.rounded-all.margin-auto(action='submit') Crear usuario
+
+	section#basic.hidden
+		.text-center
+			h1 Cuéntanos algo sobre ti
+			.ui-form.margin-vr
+				fieldset
+					label.caption Nombre
+					input(type='text', placeholder='escribe tu nombre aquí', required='true', requiredError="Debes indicar la direcci\u00f3n de mail", validateOnBlur='true', name='firstName', tabindex='1').gray-border.rounded-all.padding-hr.base
+				fieldset
+					label.caption Apellido
+					input(type='text', placeholder='y aquí tu apellido', required='true', requiredError="Debes establecer una contraseña", validateOnBlur='true', name='lastName', tabindex='2').gray-border.rounded-all.padding-hr.base
+				fieldset
+					label.caption Teléfono de contacto
+					input(type='text', placeholder='ej: +54 9 11 1234 4321', required='true', requiredError="Debes indicar tu número de teléfono", validateOnBlur='true', name='phone', tabindex='3').gray-border.rounded-all.padding-hr.base
+
+				.first-inpage
+					button.primary-background.rounded-all.margin-auto(action='submit') Guardar y continuar
+
+	section#with-friends.hidden
+		.text-center
+			h1 Todo es mejor con amigos
+			.first-inpage
+				| Microagenda te ayuda a que nunca dejes de estar en contacto con ellos!
+			
+			.hero-container.first-inpage
+				img.hero(src='/img/wfriends.svg')
+
+			hr
+			.secondary 
+				| Invítalos ahora para tener su número de teléfono siempre actualizado
+			.first-inpage
+				button.primary-background.rounded-all.right(action='continue') Continuar
+				.clear

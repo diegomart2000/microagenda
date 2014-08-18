@@ -8,8 +8,39 @@ define(function(){
 
 		//Module init method
 		init: function(){
-			var log = _.bind(console.log, console);
-			this.checkLoginStatus(log, log);
+			var controller = {
+				'LOGGEDIN': _.bind(this.doHome, this),
+				'REGISTRATION': _.bind(this.doRegistration, this),
+				'LANDING': _.bind(this.doLanding, this)
+			};
+
+			this.checkLoginStatus(
+				//onSuccess
+				function(method){
+					controller[method]();
+				}, 
+
+				//onError
+				function(err){
+					console.error('Error while check login status', err);
+				});
+		},
+
+		//On Loggedin show the user home
+		doHome: function(){
+			console.log('LOGIN: doHome');
+		},
+
+		//On Registration show the tutoria
+		doRegistration: function(){
+			console.log('LOGIN: doRegistration');
+
+			require(['microagenda.tutorial'], function(tutorial){});
+		},
+
+		//On Landing show the login/register page
+		doLanding: function(){
+			console.log('LOGIN: doLanding');
 		},
 
 		//This method will check the login status
@@ -31,12 +62,27 @@ define(function(){
 			//REGISTRATION: no user found, but facebook is connected
 			//LANDING: no user, no facebook connected, show love
 
-			if(self.user) return onSuccess('LOGGEDIN');
+			if(self.user){
+				Microagenda.context.user = self.user;
+
+				Microagenda.context.user.get('person').fetch();
+				Microagenda.context.user.get('contact').fetch();
+
+				var UserPlatform = Parse.Object.extend("UserPlatform");
+				var query = new Parse.Query(UserPlatform);
+				query.equalTo("user", self.user);
+
+				query.first().then(function(result) {
+					Microagenda.context.userPlatform = result;
+				});
+
+				return onSuccess('LOGGEDIN');	
+			} 
 
 			//If no user found, check if facebook is connected
 
 			//Check facebook login status
-			function getFacebookUser(){
+			function checkFacebookLoginStatus(){
 				var deferred = Q.defer();
 
 				console.log('LOGIN: check FB status...');
@@ -54,22 +100,40 @@ define(function(){
 				return deferred.promise;
 			};
 
+			//Check facebook login status
+			function getFacebookUser(fbUser){
+				var deferred = Q.defer();
+
+				if (fbUser) {
+					console.log('LOGIN: get FB user...');
+					FB.api('/me', function(me){
+						Microagenda.context.facebook = me;
+						deferred.resolve(fbUser);	
+					});
+				}else{
+					deferred.resolve(fbUser);
+				}
+
+				return deferred.promise;
+			};
+
 			//If a facebook user is found, check for the facebook user id in Parse.
-			function lookupForUserByFacebookId(fbUser){
+			function lookupUserByFacebookId(fbUser){
 				var deferred = Q.defer();
 
 				if(fbUser){
 					console.log('LOGIN: looking for Parse user for [%s]', fbUser.userId);
 					var UserPlatform = Parse.Object.extend("UserPlatform");
 					var query = new Parse.Query(UserPlatform);
-					query.equalTo("facebookId", fbUser.userId);
+					query.equalTo("socialId", fbUser.userId);
 
-					query.find({
-						success: function(results) {
-							self.user = results[0];
+					query.first({
+						success: function(result) {
+							self.user = result;
 
 							//If no user, its a registration
 							if(self.user){
+								Microagenda.context.userPlatform = result;
 								deferred.resolve('LOGGEDIN');
 							}else{
 								deferred.resolve('REGISTRATION');
@@ -81,14 +145,15 @@ define(function(){
 					});
 				}else{
 					console.log('LOGIN: Not connected at all, its a LANDING');
-					deferred.resolve('LANDING');
+					deferred.resolve('REGISTRATION');
 				}
 				return deferred.promise;
 			};
 
 			//Do the promise dance
-			getFacebookUser()
-				.then(lookupForUserByFacebookId)
+			checkFacebookLoginStatus()
+				.then(getFacebookUser)
+				.then(lookupUserByFacebookId)
 				.then(onSuccess, onError);
 
 		}
