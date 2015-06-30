@@ -89,7 +89,7 @@ define(['lib/text!/partials/tutorial', '../model/microagenda.registration.model'
 
 		//State
 		event: 'basicInfo',
-		to: 'invite',
+		to: 'connect',
 		
 		//State event on enter state
 		onEnter: function(){
@@ -130,17 +130,87 @@ define(['lib/text!/partials/tutorial', '../model/microagenda.registration.model'
 	Microagenda.StateMachine.State.extend(basicState);
 	states.push(basicState);
 
+	//Facebook connect State
+	var facebookConnectSection = {
+		//State
+		event: 'connect',
+		to: 'invite',
+
+		//View
+		el: templates.find('#facebook-connect'),
+
+		//On enter state, show the screen
+		onEnter: function(){
+			//Check if facebook is already connected, for instance, when running in facebook canvas
+			if(Microagenda.context.facebook) {
+				return tutorialMachine.on(this.event);
+			}
+
+			this.prepareSection();
+			this.show();
+		},
+
+		//Once the form is shown, setup some button events
+		onShow: function(){
+			var self = this;
+
+			self.el.find('[action=connect]').on('click', function(){
+				FB.login(function(response) {
+					if (response.authResponse) {
+						console.log('Welcome!  Fetching your information.... ');
+						FB.api('/me', function(me) {
+							registration.registerPlatform(me,
+								//success
+								function(){
+									console.log('User platform registered!');
+								},
+
+								//error
+								function(err){
+									if(err.code == 202){
+										console.log('User already registered');
+									}else{
+										alert(error);
+									}
+								}
+							);
+						});
+					} else {
+						console.log('User cancelled login or did not fully authorize.');
+					}
+
+					self.close();
+				});
+			});
+		},
+
+		//When close the view, notify this event is done
+		onClose: function(){
+			//Called on skip method
+			var done = _.bind(tutorialMachine.on, tutorialMachine);
+			_.delay(done, 300, this.event);
+		}
+	};
+	Microagenda.View.Section.extend(facebookConnectSection);
+	Microagenda.StateMachine.State.extend(facebookConnectSection);
+	states.push(facebookConnectSection);
+
 	//With friends State
 	var withFriendsSection = {
 		//State
 		event: 'invite',
-		to: 'other',
+		to: 'acceptRequests',
 
 		//View
 		el: templates.find('#with-friends'),
 
 		//On enter state, show the screen
 		onEnter: function(){
+			//Check if facebook is connected, if not, just skip this section
+			if(!Microagenda.context.facebook) {
+				return tutorialMachine.on(this.event);
+			}
+
 			this.prepareSection();
 			this.show();
 		},
@@ -160,6 +230,32 @@ define(['lib/text!/partials/tutorial', '../model/microagenda.registration.model'
 	Microagenda.View.Section.extend(withFriendsSection);
 	Microagenda.StateMachine.State.extend(withFriendsSection);
 	states.push(withFriendsSection);
+
+	//Accept subscription requets
+	var acceptRequestsSection = {
+		//State
+		event: 'acceptRequests',
+		to: 'other',
+
+		//View
+		el: templates.find('#accept-requests'),
+
+		//On enter state, show the screen
+		onEnter: function(){
+			this.prepareSection();
+			this.show();
+		},
+
+		//When close the view, notify this event is done
+		onClose: function(){
+			//Called on skip method
+			var done = _.bind(tutorialMachine.on, tutorialMachine);
+			_.delay(done, 300, this.event);
+		}
+	};
+	Microagenda.View.Section.extend(acceptRequestsSection);
+	Microagenda.StateMachine.State.extend(acceptRequestsSection);
+	states.push(acceptRequestsSection);
 
 	//Create the machine and start it
 	var tutorialMachine = Microagenda.StateMachine.extend(states, 'welcome');

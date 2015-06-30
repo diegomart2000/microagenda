@@ -7,6 +7,7 @@ define(function(){
 	//Model related to the contact list, basically to store phone contacts and get the list
 	function Contact(){
 		this.id = null; //A globally unique identifier. (DOMString)
+		this.objectId = null; //The Object Id on Parse.
 		this.displayName = null; //The name of this Contact, suitable for display to end users. (DOMString)
 		this.name = null; //An object containing all components of a persons name. (ContactName)
 		this.nickname = null; //A casual name by which to address the contact. (DOMString)
@@ -30,28 +31,44 @@ define(function(){
 	//Class functions
 
 	//Builds a new contact based on a contact parse model
-	Contact.as = function(subscription){
+	Contact.as = function(src){
 		var result = new Contact();
 
-		var contact = subscription.get('contact');
-		var person = contact.get('person');
+		//check whether src is a subscription or a local contact
+		if(src instanceof Parse.Object){
+			if(src.get('to')){ //Is it a microagenda contact
+				var contact = src.get('contact');
+				var person = contact.get('person');
 
-		result.id = contact.get('user').id;
-		result.displayName = person.get('firstName') + ' ' + person.get('lastName');
-		result.name = {givenName: person.get('firstName'), familyName: person.get('lastName')};
-		result.nickname = person.get('nickname');
-		result.phoneNumbers = contact.get('phones');
-		result.emails = contact.get('emails');
-		result.addresses = contact.get('location');
-		result.birthday = contact.get('birthday');
-		result.photos = [];
-		result.categories = contact.get('categories');
+				result.id = src.get('localId');
+				result.objectId = src.id;
+				result.displayName = person.get('firstName') + ' ' + person.get('lastName');
+				result.name = {givenName: person.get('firstName'), familyName: person.get('lastName')};
+				result.nickname = person.get('nickname');
+				result.phoneNumbers = contact.get('phones');
+				result.emails = contact.get('emails');
+				result.addresses = contact.get('location');
+				result.birthday = contact.get('birthday');
+				result.photos = [];
+				result.categories = contact.get('categories');
+			
+			}else if(src.get('toLocal')){ //Is it a backup contact
+				_.extend(result, src.get('toLocal'));
+				result.id = src.get('localId');
+				result.objectId = src.id;
+			}
+
+		}else{ //Is it a backup contact
+			_.extend(result, src);
+		}
 
 		return result;
 	};
 
 	//Allows to create a backup for the given contact list
 	Contact.backup = function(contacts, onSuccess, onError){
+		if(!contacts) return;
+
 		var user = Microagenda.context.user;
 
 		//Subscription contains a toLocalContact object
@@ -64,8 +81,9 @@ define(function(){
 
 			subscription.save({
 				from: user,
+				toLocalId: contact.id,
 				toLocal: contact,
-				approved: false
+				approved: true
 			});
 		});
 

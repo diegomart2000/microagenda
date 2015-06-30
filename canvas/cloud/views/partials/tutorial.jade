@@ -3,7 +3,7 @@ div
 		.text-center
 			h1 Bienvenido a Microagenda
 			.first-inpage
-				| La forma más fácil y rápida de tener los datos de las personas qué más te importan, siempre al alcance de tu mano!
+				| La forma más fácil y rápida de tener a las personas qué más te importan, siempre en tu agenda de contactos!
 			
 			.hero-container.first-inpage
 				img.hero(src='/img/icon.svg')
@@ -17,7 +17,7 @@ div
 
 	section#signup.hidden
 		.text-center
-			h1 Crea tu usuario
+			h1 Crea tu cuenta
 			.ui-form.margin-vr
 				fieldset
 					label.caption Email
@@ -30,37 +30,88 @@ div
 					input(type='password', placeholder='repite la contraseña por seguridad', required='true', requiredError="Debes repetir la contraseña ingresada", validateOnBlur='true', name='again', tabindex='3').gray-border.rounded-all.padding-hr.base
 
 				.first-inpage
-					button.primary-background.rounded-all.margin-auto(action='submit') Crear usuario
+					button.primary-background.rounded-all.margin-auto(action='submit') Crear cuenta
 
 	section#basic.hidden
 		.text-center
-			h1 Cuéntanos algo sobre ti
+			h1 Cuéntanos sobre ti
 			.ui-form.margin-vr
 				fieldset
-					label.caption Nombre
-					input(type='text', placeholder='escribe tu nombre aquí', required='true', requiredError="Debes indicar la direcci\u00f3n de mail", validateOnBlur='true', name='firstName', tabindex='1').gray-border.rounded-all.padding-hr.base
+					label.caption Tu nombre
+					input(type='text', placeholder='escribe tu nombre aquí', required='true', requiredError="Debes indicar tu nombre", validateOnBlur='true', name='firstName', tabindex='1').gray-border.rounded-all.padding-hr.base
 				fieldset
-					label.caption Apellido
-					input(type='text', placeholder='y aquí tu apellido', required='true', requiredError="Debes establecer una contraseña", validateOnBlur='true', name='lastName', tabindex='2').gray-border.rounded-all.padding-hr.base
+					label.caption Tu apellido
+					input(type='text', placeholder='y aquí tu apellido', required='true', requiredError="Debes indicar tu apellido", validateOnBlur='true', name='lastName', tabindex='2').gray-border.rounded-all.padding-hr.base
 				fieldset
-					label.caption Teléfono de contacto
+					label.caption Número de teléfono
 					input(type='text', placeholder='ej: +54 9 11 1234 4321', required='true', requiredError="Debes indicar tu número de teléfono", validateOnBlur='true', name='phone', tabindex='3').gray-border.rounded-all.padding-hr.base
 
 				.first-inpage
 					button.primary-background.rounded-all.margin-auto(action='submit') Guardar y continuar
 
-	section#with-friends.hidden
+	section#facebook-connect
 		.text-center
-			h1 Todo es mejor con amigos
+			h1 Conecta Facebook
 			.first-inpage
-				| Microagenda te ayuda a que nunca dejes de estar en contacto con ellos!
+				| Te ayudará a encrontrar más rápido a la gente que quieras agregar a tu agenda!
 			
 			.hero-container.first-inpage
 				img.hero(src='/img/wfriends.svg')
 
 			hr
 			.secondary 
-				| Invítalos ahora para tener su número de teléfono siempre actualizado
+				| Jamás publicaremos nada en tu perfil sin tu permiso, palabra!
 			.first-inpage
-				button.primary-background.rounded-all.right(action='continue') Continuar
+				button.primary-background.rounded-all.margin-auto(action='connect') Conectar Facebook
+				a.link-button.caption(action='continue') No gracias
 				.clear
+
+	section#with-friends.hidden
+		.splash
+			.text-center
+				h1 Todo es mejor con amigos
+				.first-inpage
+					| La forma más fácil de completar tu agenda es invitando a tus amigos de Facebook!
+				
+				.hero-container.first-inpage
+					img.hero(src='/img/wfriends.svg')
+
+				hr
+				.secondary 
+					| Invítalos ahora para tener su número de teléfono siempre actualizado
+				.first-inpage
+					button.primary-background.rounded-all.right(action='continue') Continuar
+					.clear
+		.success
+
+
+	section#accept-requests.hidden
+		.splash
+			.text-center
+				h1 Personas desean agendarte
+				.first-inpage
+					| Algunos de tus amigos desean poder estar siempre en contacto contigo!
+				
+				.hero-container.first-inpage
+					img.hero(src='/img/wfriends.svg')
+
+				hr
+				.secondary 
+					| Te mostraremos la lista de solicitudes para tener tus datos de contacto que has recibido
+				.first-inpage
+					button.primary-background.rounded-all.right(action='continue') Ver solicitudes
+					.clear
+
+		.requests
+			.text-center
+				h1 Siempre en contacto
+				.first-inpage
+					p Estos son algunos de tus amigos que desean tener tu número siempre actualizado.
+					p Para que tengan tu número, haz click en 
+						img
+				hr
+					ul.contact-list
+
+				.first-inpage
+					button.primary-background.rounded-all.right(action='continue') Continuar
+					.clear

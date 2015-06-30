@@ -141,6 +141,37 @@ define(function(){
 				.then(createContact)
 				.then(updateUser)
 				.then(onSuccess, onError);
+		},
+
+		//To register the user platform for the given user
+		registerPlatform: function(fbUser, onSuccess, onError){
+			var UserPlatform = Parse.Object.extend("UserPlatform");
+
+			var query = new Parse.Query(UserPlatform);
+			query.equalTo('platformId', 'facebook');
+			query.equalTo('socialId', fbUser.id);
+
+			query.find()
+				//Check whether the give facebook user is already registered
+				.then(function(found){
+
+					if(!found){
+						Microagenda.context.facebook = fbUser;
+
+						var userPlatform = new UserPlatform();
+						return userPlatform.save({
+							user: user,
+							platformId: 'facebook',
+							socialId: Microagenda.context.facebook.id
+						});
+
+					//If found, reject
+					}else{
+						return Parse.Promise.error({code: 202, message: 'Facebook user already registered'});
+					}
+				})
+
+				.then(onSuccess, onError);
 		}
 	};
 });
