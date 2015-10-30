@@ -11,10 +11,10 @@ pids
 logs
 results
 
-mobile/.cordova/
-mobile/hooks/
-mobile/plugins/
-mobile/platforms/
+.cordova/
+hooks/
+plugins/
+platforms/
 
-mobile/wwww/debugdata.json
-mobile/wwww/phonegap-desktop.js
+wwww/debugdata.json
+wwww/phonegap-desktop.js
