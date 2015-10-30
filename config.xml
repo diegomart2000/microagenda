@@ -46,7 +46,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 	
-    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.8.0">
         <param name="APP_ID" value="604043223046726" />
         <param name="APP_NAME" value="microagenda" />
     </gap:plugin>
